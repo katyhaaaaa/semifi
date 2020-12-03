@@ -1,37 +1,47 @@
 @extends('base')
 
-
 @section('content')
 
-<h1>Instructors</h1>
-<table class="table table-bordered table-striped table-sm">
-    <thead>
+@include('info')
+<br>
 
+<div class="float-right">
+    <a href="{{url('/instructors/create')}}" class="btn btn-primary btn-sm">
+        Add New Instructor
+    </a>
+</div>
+
+<h1>List of Instructors</h1>
+
+<table class="table table-bordered table-striped table-sm">
+    <thead class="thead-dark">
         <tr>
             <th>Last Name</th>
             <th>First Name</th>
             <th>Expertise</th>
             <th>Rating</th>
-
+            <th>Option</th>
         </tr>
-
     </thead>
 
-        <tbody>
-            @foreach($instructors as $instructor)
+    <tbody>
+        @foreach($instructors as $ins)
 
             <tr>
-
-                <td>{{$instructor->lname}}</td>
-                <td>{{$instructor->fname}}</td>
-                <td>{{$instructor->aoe}}</td>
-                <td>{{$instructor->rating}}</td>
-
+                <td>{{$ins->lname}}</td>
+                <td>{{$ins->fname}}</td>
+                <td>{{$ins->aoe}}</td>
+                <td>{{$ins->rating}}</td>
+                <td>
+                    <a href="{{url('/instructors/edit', ['lname'=>$ins]) }}" class="btn btn-success btn-sm">
+                        <i class="fa fa-check"></i> Edit
+                    </a>
+                </td>
             </tr>
 
-            @endforeach
-        </tbody>
-
+        @endforeach
+    </tbody>
 </table>
+
 
 @stop

@@ -6,34 +6,34 @@
 <br>
 
 <div class="float-right">
-    <a href="{{url('/learners/create')}}" class="btn btn-primary btn-sm">
-        Add New Learner
+    <a href="{{url('/users/create')}}" class="btn btn-primary btn-sm">
+        Add New User
     </a>
 </div>
 
-<h1>List of Learners</h1>
+<h1>List of Users</h1>
 
 <table class="table table-bordered table-striped table-sm">
     <thead class="thead-dark">
         <tr>
+            <th>ID#</th>
             <th>Last Name</th>
             <th>First Name</th>
-            <th>Level</th>
-            <th>Status</th>
+            <th>Email</th>
             <th>Option</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach($learners as $lrn)
+        @foreach($users as $u)
 
             <tr>
-                <td>{{$lrn->lname}}</td>
-                <td>{{$lrn->fname}}</td>
-                <td>{{$lrn->level}}</td>
-                <td>{{$lrn->status}}</td>
+                <td>{{$u->id}}</td>
+                <td>{{$u->lname}}</td>
+                <td>{{$u->fname}}</td>
+                <td>{{$u->email}}</td>
                 <td>
-                    <a href="{{url('/learners/edit', ['lname'=>$lrn]) }}" class="btn btn-success btn-sm">
+                    <a href="{{url('/users/edit', ['id'=>$u]) }}" class="btn btn-success btn-sm">
                         <i class="fa fa-check"></i> Edit
                     </a>
                 </td>
