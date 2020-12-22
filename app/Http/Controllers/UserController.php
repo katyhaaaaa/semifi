@@ -47,4 +47,14 @@ class UserController extends Controller
 
         return redirect('/users')->with ('info', "The record of $users->fname, $users->lname has been updated.");
     }
+
+    public function delete(Request $request) {
+        $userId = $request['user_id'];
+        $users = User::find($userId);
+        $name = $users->lname . ", " . $users->fname;
+
+        $users->delete();
+
+        return redirect('/users')->with('info', "The user $name has been deleted");
+    }
 }

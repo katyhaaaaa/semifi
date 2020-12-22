@@ -14,7 +14,7 @@
 <h1>List of Users</h1>
 
 <table class="table table-bordered table-striped table-sm">
-    <thead class="thead-dark">
+    <thead class="bg-secondary">
         <tr>
             <th>ID#</th>
             <th>Last Name</th>
@@ -33,7 +33,7 @@
                 <td>{{$u->fname}}</td>
                 <td>{{$u->email}}</td>
                 <td>
-                    <a href="{{url('/users/edit', ['id'=>$u]) }}" class="btn btn-success btn-sm">
+                    <a href="{{url('/users/edit', ['id'=>$u]) }}" class="btn btn-secondary btn-sm">
                         <i class="fa fa-check"></i> Edit
                     </a>
                 </td>

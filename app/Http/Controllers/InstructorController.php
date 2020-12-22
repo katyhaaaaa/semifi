@@ -44,4 +44,14 @@ class InstructorController extends Controller
         return redirect('/instructors')->with('info', "The record of Instructor: $instructors->id has been updated.");
     }
 
+    public function delete(Request $request) {
+        $instructorId = $request['user_id'];
+        $instructors = Instructor::find($instructorId);
+        $name = $instructors->user_id;
+
+        $instructors->delete();
+
+        return redirect('/instructors')->with('info', "The instructor $name has been deleted");
+    }
+
 }

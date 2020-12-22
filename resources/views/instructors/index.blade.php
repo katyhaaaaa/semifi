@@ -14,7 +14,7 @@
 <h1>List of Instructors</h1>
 
 <table class="table table-bordered table-striped table-sm">
-    <thead class="thead-dark">
+    <thead class="bg-secondary">
         <tr>
             <th>Last Name</th>
             <th>First Name</th>
@@ -33,7 +33,7 @@
                 <td>{{$ins->aoe}}</td>
                 <td>{{$ins->rating}}</td>
                 <td>
-                    <a href="{{url('/instructors/edit', ['lname'=>$ins]) }}" class="btn btn-success btn-sm">
+                    <a href="{{url('/instructors/edit', ['lname'=>$ins]) }}" class="btn btn-secondary btn-sm">
                         <i class="fa fa-check"></i> Edit
                     </a>
                 </td>

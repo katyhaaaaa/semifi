@@ -14,7 +14,7 @@
 <h1>List of Learners</h1>
 
 <table class="table table-bordered table-striped table-sm">
-    <thead class="thead-dark">
+    <thead class="bg-secondary">
         <tr>
             <th>Last Name</th>
             <th>First Name</th>
@@ -33,7 +33,7 @@
                 <td>{{$lrn->level}}</td>
                 <td>{{$lrn->status}}</td>
                 <td>
-                    <a href="{{url('/learners/edit', ['lname'=>$lrn]) }}" class="btn btn-success btn-sm">
+                    <a href="{{url('/learners/edit', ['lname'=>$lrn]) }}" class="btn btn-secondary btn-sm">
                         <i class="fa fa-check"></i> Edit
                     </a>
                 </td>

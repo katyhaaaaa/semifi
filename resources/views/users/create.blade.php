@@ -2,37 +2,28 @@
 
 @section('content')
 
-@section('contentbg')
-
-<div class="background">
 <br>
-    <div class="container">
-        <div class="float-right">
-            <a href="{{url('/users')}}" class="btn btn-primary btn-sm">
-                Back
-            </a>
+
+<h2>Create New User</h2>
+
+<div class="row">
+    <div class="col-md-5">
+
+        {!!  Form::open(['url'=>'/users', 'method'=>'post']) !!}
+
+        @include('users._form')
+
+        <div class="form-group">
+            <button class="btn btn-primary float-right">Create User</button>
         </div>
-        <h2 style="color:black;">Create New User</h2>
 
-        <div class="row">
-            <div class="col-md-5" style="color:black;">
+        {!!  Form::close() !!}
 
-                {!!  Form::open(['url'=>'/users', 'method'=>'post']) !!}
+    </div>
+    <div class="col-md-7">
 
-                @include('users._form')
-
-                <div class="form-group">
-                    <button class="btn btn-primary float-right">Create User</button>
-                </div>
-
-                {!!  Form::close() !!}
-
-            </div>
-            <div class="col-md-7">
-
-                @include('errors')
-            </div>
-        </div>
+        @include('errors')
     </div>
 </div>
+
 @endsection
